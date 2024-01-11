@@ -1,7 +1,7 @@
 {
   "name": "gesture-recognition",
   "version": "1.0.0",
-  "description": "",
+  "description": "```bash\r   npm init -y\r ```",
   "main": "index.js",
   "scripts": {
     "start": "npx browser-sync start --server --files src/*.js",

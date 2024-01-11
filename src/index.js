@@ -1,6 +1,6 @@
 import { gestures } from "./gestures.js"
 const config = {
-  video: { width: 640, height: 480, fps: 30 }
+  video: { width: 1032, height: 765, fps: 60 }
 }
 
 const landmarkColors = {
@@ -17,7 +17,10 @@ const gestureStrings = {
   'rock': '✊️',
   'paper': '🖐',
   'scissors': '✌️',
-  'dont': '🚫'
+  'dont': '🚫',
+  'hang_loose': '🤙',
+  'thumbs_down': '👎',
+  'rockandroll': '🤘',
 }
 
 async function createDetector() {
@@ -26,7 +29,7 @@ async function createDetector() {
     {
       runtime: "mediapipe",
       modelType: "full",
-      maxHands: 1,
+      maxHands: 6,
       solutionPath: `https://cdn.jsdelivr.net/npm/@mediapipe/hands@0.4.1646424915`,
     }
   )
@@ -47,6 +50,7 @@ async function main() {
   const knownGestures = [
     // fp.Gestures.VictoryGesture,
     fp.Gestures.ThumbsUpGesture,
+   
     ...gestures
   ]
   const GE = new fp.GestureEstimator(knownGestures)
