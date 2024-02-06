@@ -21,6 +21,9 @@ const gestureStrings = {
   'hang_loose': '🤙',
   'thumbs_down': '👎',
   'rockandroll': '🤘',
+  'ok':'👌',
+  'gun':'👉',
+  'thief':'👮‍♂️'
 }
 
 async function createDetector() {
@@ -29,7 +32,7 @@ async function createDetector() {
     {
       runtime: "mediapipe",
       modelType: "full",
-      maxHands: 6,
+      maxHands: 2,
       solutionPath: `https://cdn.jsdelivr.net/npm/@mediapipe/hands@0.4.1646424915`,
     }
   )
@@ -50,6 +53,7 @@ async function main() {
   const knownGestures = [
     // fp.Gestures.VictoryGesture,
     fp.Gestures.ThumbsUpGesture,
+  
    
     ...gestures
   ]
